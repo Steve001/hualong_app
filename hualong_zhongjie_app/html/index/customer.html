@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script type="text/javascript">
+			document.write('<script src="../../js/fix.js?rd=?rd=' + Math.random() + '"><\/script>');
+		</script>
+		<script type="text/javascript">
+			link(['../../css/index/tuijie.css']);
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的客户</h1>
+		</header>
+
+		<div class="mui-content">
+			<ul class="mui-table-view" id="target">
+
+			</ul>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		script(['../../js/mui.min.js', '../../js/lib/md5.min.js', '../../js/lib/common.js', '../../js/index/customer.js','../../js/lib/artTemplate.js'], true);
+	</script>
+	<script id="template" type="text/html">
+		<!--标记需要循环的内容  -->
+		{{each dataList as value i}}
+		<li class="mui-table-view-cell " position={{i}} id={{value.id}}>
+			<div class="mui-slider-handle">
+				<div class="mui-media-body ">
+					<div class="mui-table">
+						<div class="mui-table-cell mui-col-xs-12" >
+							<p class="mui-ellipsis" style="color: black;">客户姓名:{{value.cusName}}</p>
+							<p class=" mui-text-right" style="color: black; font-size: 20px;">{{value.cusStat}}</p>
+							<p class="mui-ellipsis" style="font-size: 12px;">
+								<span class="mui-table-cell mui-col-xs-2 ">推介时间:</span>
+								<span class="mui-table-cell mui-col-xs-3 mui-ellipsis">{{value.cusTjtime}}</span>
+							</p>
+							<p class="mui-ellipsis" style="font-size: 12px;">
+								<span class="mui-table-cell mui-col-xs-2">客户电话:</span>
+								<span class="mui-table-cell mui-col-xs-3">{{value.cusPhone}}</span>
+							</p>
+							<p class="mui-ellipsis" style="font-size: 12px;">
+								<span class="mui-table-cell mui-col-xs-2">意向面积:</span>
+								<span class="mui-table-cell mui-col-xs-3">{{value.cusArea}}</span>
+							</p>
+						<!--
+						</div>
+						<div class="mui-table-cell mui-inline  mui-text-right">
+							<span class="mui-ellipsis-4" style="color: #8f8f94; font-size: 13px;">{{value.cusStat}}</span>
+						</div>
+						-->
+					</div>
+				</div>
+			</div>
+		</li>
+		{{/each}}
+	</script>
+
+</html>
