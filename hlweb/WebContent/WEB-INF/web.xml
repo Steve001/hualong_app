@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<servlet>
+		<servlet-name>addUserServlet</servlet-name>
+		<servlet-class>com.hl.web.addUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addUserServlet</servlet-name>
+		<url-pattern>/addUser</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>userLoginServlet</servlet-name>
+		<servlet-class>com.hl.web.userLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userLoginServlet</servlet-name>
+		<url-pattern>/userLogin</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>addCusServlet</servlet-name>
+		<servlet-class>com.hl.web.addCusServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addCusServlet</servlet-name>
+		<url-pattern>/addCus</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>getCusServlet</servlet-name>
+		<servlet-class>com.hl.web.getCusServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getCusServlet</servlet-name>
+		<url-pattern>/getCus</url-pattern>
+	</servlet-mapping>
+</web-app>

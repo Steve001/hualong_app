@@ -1,0 +1,54 @@
+package com.hl.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.hl.model.User;
+
+public class UserDao {
+
+	public User userLogin(Connection con, User user) throws SQLException {
+		User resUser = null;
+		String sql = "select * from user where user_phone=? and user_password=?";
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, user.getUserPhone());
+		pstmt.setString(2, user.getUserPassword());
+		ResultSet rs = pstmt.executeQuery();
+		if (rs.next()) {
+			resUser = new User();
+			resUser.setUserId(rs.getInt("user_id"));
+			resUser.setUserJigou(rs.getNString("user_jigou"));
+			resUser.setUserName(rs.getString("user_name"));
+			resUser.setUserPassword(rs.getString("user_password"));
+			resUser.setUserPhone(rs.getString("user_phone"));
+		}
+		return resUser;
+	}
+
+	public int isExistUser(Connection connection, User user) throws SQLException {
+		String sql = "select count(*) from user where user_phone = ?";
+		PreparedStatement pstmt = connection.prepareStatement(sql);
+		pstmt.setString(1, user.getUserPhone());
+		ResultSet executeQuery = pstmt.executeQuery();
+		while (executeQuery.next()) {
+			if (executeQuery.getInt(1) > 0) {
+				return 1;
+			} else {
+				return 0;
+			}
+		}
+		return 0;
+	}
+
+	public int addUser(Connection con, User user) throws SQLException {
+		String sql = "insert into user(user_name,user_phone,user_password,user_jigou) values(?,?,?,?)";
+		PreparedStatement pstm = con.prepareStatement(sql);
+		pstm.setString(1, user.getUserName());
+		pstm.setString(2, user.getUserPhone());
+		pstm.setString(3, user.getUserPassword());
+		pstm.setString(4, user.getUserJigou());
+		return pstm.executeUpdate();
+	}
+}
