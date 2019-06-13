@@ -1,8 +1,8 @@
 //api连接前缀
-var APP_DOMAIN = 'http://39.98.249.61:8080/hlweb';
+var APP_DOMAIN = 'http://192.168.1.105:8080/hlweb/';
 
 //为true输出日志
-var debug = false;
+var debug = false; 
 
 //页面回弹
 var sw = document.getElementsByClassName(".mui-scroll-wrapper.scroll");
@@ -14,7 +14,7 @@ if(sw) {
 var baseStorage;
 //本地临时数据
 var temporaryStorage;
-//本地登录用户
+//本地登录用户ß
 var storageUser;
 //本地用户地址信息
 var storageLocation;

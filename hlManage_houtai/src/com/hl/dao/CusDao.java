@@ -18,7 +18,7 @@ public class CusDao {
 
 
 	public int isExistCus(Connection connection, Customer customer) throws SQLException {
-		String sql = "select count(*) from customer where cus_name = ? and cus_phone = ?";
+		String sql = "select count(*) from customer where cus_name = ? and cus_phone = ?"; //姓名电话判断客户是否存在
 		PreparedStatement pstmt = connection.prepareStatement(sql);
 		pstmt.setString(1, customer.getCusName());
 		pstmt.setString(2, customer.getCusPhone());
@@ -53,18 +53,19 @@ public class CusDao {
 		}
 		PreparedStatement pstmt = connection.prepareStatement(sb.toString());
 		ResultSet rs = pstmt.executeQuery();
-		while (rs.next()) {
+		while (rs.next()) {     
 			Customer customer1 = new Customer();
-			customer1.setCusId(rs.getInt(1));
+			customer1.setCusId(rs.getInt(1));   					//从数据库中查询信息，需要匹配数据库中相关字段
 			customer1.setCusName(rs.getString(2));
 			customer1.setCusSex(rs.getString(3));
 			customer1.setCusPhone(rs.getString(4));
 			customer1.setCusArea(rs.getInt(5));
 			customer1.setCusDate(rs.getString(6));
 			customer1.setCusUserId(rs.getInt(7));
-			customer1.setCusStat(rs.getString(8));
-			customer1.setCusTjTime(rs.getString(9));
-			customer1.setCusUser(rs.getString(10));
+			customer1.setCusGuwen(rs.getString(8)); 
+			customer1.setCusStat(rs.getString(9));
+			customer1.setCusTjTime(rs.getString(10));
+			customer1.setCusUser(rs.getString(11));						
 			customers.add(customer1);
 		}
 		return customers;
@@ -99,6 +100,7 @@ public class CusDao {
 			customer1.setCusStat(rs.getString(8));
 			customer1.setCusTjTime(rs.getString(9));
 			customer1.setCusUser(rs.getString(10));
+			customer1.setCusGuwen(rs.getString(11));	      //获取置业顾问
 		}
 		return customer1;
 	}

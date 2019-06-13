@@ -12,6 +12,7 @@ public class Customer {
 	private String cusStat;
 	private String cusTjTime;
 	private String cusUser;
+	private String cusGuwen;
 
 
 	
@@ -95,11 +96,19 @@ public class Customer {
 	public void setCusStat(String cusStat) {
 		this.cusStat = cusStat;
 	}
+	
+	public String getCusGuwen() {
+		return cusGuwen;
+	}
+	
+	public void setCusGuwen(String cusGuwen) {
+		this.cusGuwen = cusGuwen;
+	}
 
 	@Override
 	public String toString() {
 		return "Customer [cusId=" + cusId + ", cusName=" + cusName + ", cusSex=" + cusSex + ", cusPhone=" + cusPhone
-				+ ", cusDate=" + cusDate + ", cusArea=" + cusArea + ", cusUserId=" + cusUserId + ", cusStat=" + cusStat
+				+ ", cusDate=" + cusDate + ", cusArea=" + cusArea + ", cusUserId=" + cusUserId + ", cusGuwen=" + cusGuwen + ", cusStat=" + cusStat
 				+ ", cusTjTime=" + cusTjTime + ", cusUser=" + cusUser + "]";
 	}
 

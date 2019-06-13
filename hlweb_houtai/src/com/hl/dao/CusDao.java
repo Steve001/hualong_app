@@ -19,7 +19,7 @@ public class CusDao {
 
 	public int addCus(Connection connection, Customer customer) throws SQLException {
 
-		String sql = "insert into customer values(null,?,?,?,?,?,?,?,?)";
+		String sql = "insert into customer values(null,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement pstmt = connection.prepareStatement(sql);
 		pstmt.setString(1, customer.getCusName());
 		pstmt.setString(2, customer.getCusSex());
@@ -27,12 +27,13 @@ public class CusDao {
 		pstmt.setString(4, customer.getCusArea());
 		pstmt.setString(5, customer.getCusDate());
 		pstmt.setInt(6, customer.getCusUserId());
-		pstmt.setString(7, "已推介");
-		pstmt.setTimestamp(8, new Timestamp(new Date().getTime()));
+		pstmt.setString(7, customer.getCusGuwen());   //获取置业顾问信息
+		pstmt.setString(8, "已推介");
+		pstmt.setTimestamp(9, new Timestamp(new Date().getTime()));
 		return pstmt.executeUpdate();
 	}
 
-	public int isExistCus(Connection connection, Customer customer) throws SQLException {
+	public int isExistCus(Connection connection, Customer customer) throws SQLException {	//根据手机号判断客户是否被推介
 		String sql = "select count(*) from customer where cus_phone = ?";
 		//String sql = "select count(*) from customer where cus_name = ? and cus_phone = ?";
 		PreparedStatement pstmt = connection.prepareStatement(sql);
@@ -64,7 +65,8 @@ public class CusDao {
 			customer.setCusArea(executeQuery.getString(5));
 			customer.setCusDate(executeQuery.getString(6));
 			customer.setCusStat(executeQuery.getString(8));
-			customer.setCusTjtime(format.format(new Date(executeQuery.getTimestamp(9).getTime())));
+			customer.setCusGuwen(executeQuery.getString(9));
+			customer.setCusTjtime(format.format(new Date(executeQuery.getTimestamp(10).getTime())));
 			customers.add(customer);
 		}
 		return customers;

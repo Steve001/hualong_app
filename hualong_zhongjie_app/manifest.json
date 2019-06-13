@@ -182,10 +182,10 @@
                 "android" : {
                     "mdpi" : "C:/6.png",
                     "ldpi" : "C:/6.png",
-                    "hdpi" : "C:/6.png",
-                    "xhdpi" : "C:/6.png",
-                    "xxhdpi" : "C:/6.png",
-                    "xxxhdpi" : "C:/6.png"
+                    "hdpi" : "",
+                    "xhdpi" : "",
+                    "xxhdpi" : "",
+                    "xxxhdpi" : ""
                 }
             },
             "splashscreen" : {
@@ -206,9 +206,9 @@
                 "android" : {
                     "mdpi" : "", /*普通屏启动图片，分辨率：240x282*/
                     "ldpi" : "",
-                    "hdpi" : "C:/hllogo.png",
-                    "xhdpi" : "C:/hllogo.png",
-                    "xxhdpi" : "C:/hllogo.png"
+                    "hdpi" : "",
+                    "xhdpi" : "",
+                    "xxhdpi" : ""
                 }
             }
         }

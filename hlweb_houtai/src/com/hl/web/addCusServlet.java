@@ -45,6 +45,7 @@ public class addCusServlet extends HttpServlet {
 		String cusArea = request.getParameter("cusArea");
 		String cusDate = request.getParameter("cusDate");
 		String cusUserid = request.getParameter("cusUserid");
+		String cusGuwen = request.getParameter("cusGuwen");
 		if (cusName == null || cusSex == null || cusPhone == null || cusArea == null || cusDate == null) {
 			httpModel.setStatus(HttpModel.ERROR);
 			httpModel.setMessage("数据不完整");
@@ -53,7 +54,7 @@ public class addCusServlet extends HttpServlet {
 			customer.setCusName(cusName);
 			customer.setCusSex(cusSex);
 			customer.setCusPhone(cusPhone);
-			
+			customer.setCusGuwen(cusGuwen);
 			customer.setCusArea(cusArea);
 			customer.setCusDate(cusDate);
 			customer.setCusUserId(Integer.parseInt(cusUserid));

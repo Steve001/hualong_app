@@ -6,6 +6,7 @@ var tui_phone;
 var tui_mj;
 var tui_time;
 var tui_bz;
+var tui_guwen;
 
 mui.plusReady(function() {
 	storage.init();
@@ -15,6 +16,8 @@ mui.plusReady(function() {
 	tui_phone = document.getElementById("tui_phone");
 	tui_mj = document.getElementById("tui_mj");
 	tui_time = document.getElementById("tui_time");
+	
+	tui_guwen = document.getElementById("tui_guwen");
 	//tui_area = document.getElementById("tui_area");
 	//	tui_bz=document.getElementById("tui_bz");
 	//注册
@@ -27,7 +30,11 @@ mui.plusReady(function() {
 			//"cusArea": tui_mj.value,
 			"cusArea": tui_mj.options[tui_mj.selectedIndex].value,
 			"cusDate": tui_time.value,
-			"cusUserid": storageUser.userId
+			"cusUserid": storageUser.userId,
+			
+			"cusGuwen": tui_guwen.value,
+			
+			//"cusGuwen": tui_guwen.options[tui_guwen.getSelectedIndex].value
 			//			"cusBz":tui_bz.value
 		}
 		if(data.cusName.trim() == "") {
@@ -40,6 +47,9 @@ mui.plusReady(function() {
 		} else if(data.cusDate.trim() == "") {
 			//appUI.showTopTip("请输入联系电话");
 			mui.toast("请选择预计到访时间");
+		} else if(data.cusGuwen.trim() == "") {
+			//appUI.showTopTip("请输入联系电话");
+			mui.toast("请选择你指定的置业顾问");
 		} else {
 			appUI.setDisabled(btn_submit);
 			request("/addCus", data, function(json) {
