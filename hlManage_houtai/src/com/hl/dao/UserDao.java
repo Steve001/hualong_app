@@ -33,6 +33,7 @@ public class UserDao {
 			resUser.setUserName(rs.getString("user_name"));
 			resUser.setUserPassword(rs.getString("user_password"));
 			resUser.setUserPhone(rs.getString("user_phone"));
+			resUser.setUserTjname(rs.getNString("user_tjname"));
 			users.add(resUser);
 		}
 		return users;
@@ -40,12 +41,13 @@ public class UserDao {
 	
 	/* 添加业务员 */
 	public int addUser(Connection con,User user) throws SQLException {
-		String sql="insert into user(user_name,user_phone,user_password,user_jigou) values(?,?,?,?)";
+		String sql="insert into user(user_name,user_phone,user_password,user_jigou,user_tjname) values(?,?,?,?,?)";
 		PreparedStatement pstm=con.prepareStatement(sql);
 		pstm.setString(1, user.getUserName());
 		pstm.setString(2, user.getUserPhone());
 		pstm.setString(3, user.getUserPassword());
 		pstm.setString(4, user.getUserJigou());
+		pstm.setString(5, user.getUserTjname());
 		return pstm.executeUpdate();
 		
 	}
@@ -68,6 +70,7 @@ public class UserDao {
 		while (rs.next()) {
 			resUser.setUserId(rs.getInt("user_id"));
 			resUser.setUserJigou(rs.getNString("user_jigou"));
+			resUser.setUserTjname(rs.getNString("user_tjname"));
 			resUser.setUserName(rs.getString("user_name"));
 			resUser.setUserPassword(rs.getString("user_password"));
 			resUser.setUserPhone(rs.getString("user_phone"));
@@ -83,6 +86,7 @@ public class UserDao {
 		pstm.setString(3, user.getUserPassword());
 		pstm.setString(4, user.getUserJigou());
 		pstm.setInt(5, user.getUserId());
+		pstm.setString(6, user.getUserTjname());
 		return pstm.executeUpdate();
 	}
 	

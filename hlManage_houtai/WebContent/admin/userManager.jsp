@@ -37,6 +37,7 @@
 					<th>电话</th>
 					<th>密码</th>
 					<th>机构</th>
+					<th>app推荐人</th>
 					<th>操作</th>
 				</tr>
 				<c:forEach  varStatus="i" var="user" items="${usersList }">
@@ -47,6 +48,7 @@
 						<td>${user.userPhone }</td>
 						<td>${user.userPassword }</td>
 						<td>${user.userJigou }</td>
+						<td>${user.userTjname }</td>
 						<td><button class="btn btn-mini btn-info" type="button" onclick="javascript:window.location='userList?action=preSave&userId=${user.userId }'">修改</button>&nbsp;
 							<button class="btn btn-mini btn-danger" type="button" onclick="userDelete(${user.userId})">删除</button></td>
 					</tr>
