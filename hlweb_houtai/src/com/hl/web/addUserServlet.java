@@ -39,6 +39,7 @@ public class addUserServlet extends HttpServlet {
 		Connection con = null;
 		User user = new User();
 		String userJigou = request.getParameter("jigou");
+		String userTjName = request.getParameter("tjname");
 		String userName = request.getParameter("userName");
 		String userPhone = request.getParameter("userPhone");
 		String userPassword = request.getParameter("userPassword");
@@ -46,6 +47,7 @@ public class addUserServlet extends HttpServlet {
 		user.setUserPassword(userPassword);
 		user.setUserPhone(userPhone);
 		user.setUserJigou(userJigou);
+		user.setUserTjName(userTjName);
 		if (userJigou == null || userName == null || userPhone == null || userPassword == null) {
 			httpModel.setStatus(HttpModel.ERROR);
 			httpModel.setMessage("数据不完整");

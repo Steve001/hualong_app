@@ -11,6 +11,7 @@ mui.plusReady(function() {
 	var inpt_password = document.getElementById("inpt_password");
 	//	var inpt_validcode = document.getElementById("inpt_validcode");
 	var ckb_agree = document.getElementById("ckb_agree");
+	var inpt_tjname = document.getElementById("inpt_tjname");
 
 	if(ismobileno(inpt_mobile.value)) {
 		appUI.removeDisabled(btn_sendvalidcode);
@@ -53,6 +54,7 @@ mui.plusReady(function() {
 		//			});
 		request("/addUser", {
 			jigou: inpt_company_name.value,
+			tjname: inpt_tjname.value,
 			userName: inpt_zhongjie_name.value,
 			userPhone: inpt_mobile.value,
 			userPassword: inpt_password.value

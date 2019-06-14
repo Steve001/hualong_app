@@ -11,6 +11,8 @@ public class User {
 	private String userPassword;
 	
 	private String userJigou;
+	
+	private String userTjName;
 
 	public String getUserName() {
 		return userName;
@@ -51,11 +53,19 @@ public class User {
 	public void setUserJigou(String userJigou) {
 		this.userJigou = userJigou;
 	}
+	
+	public String getUserTjName() {
+		return userTjName;
+	}
+	
+	public void setUserTjName(String userTjName) {
+		this.userTjName = userTjName;
+	}
 
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userName=" + userName + ", userPhone=" + userPhone + ", userPassword="
-				+ userPassword + ", userJigou=" + userJigou + "]";
+				+ userPassword + ", userJigou=" + userJigou + ", userTuijianName=" + userTjName + "]";
 	}
 
 }
