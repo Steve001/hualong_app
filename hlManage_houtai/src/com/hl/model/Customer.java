@@ -14,6 +14,7 @@ public class Customer {
 	private String cusUser;
 	private String cusGuwen;
 	private String cusUserJigou;
+	private String cusUserTjname;
 
 
 	
@@ -113,12 +114,20 @@ public class Customer {
 	public void setCusUserJigou(String cusUserJigou) {
 		this.cusUserJigou = cusUserJigou;
 	}
+	
+	public String getCusUserTjname() {
+		return cusUserTjname;
+	}
+	
+	public void setCusUserTjname(String cusUserTjname) {
+		this.cusUserTjname = cusUserTjname;
+	}
 
 	@Override
 	public String toString() {
 		return "Customer [cusId=" + cusId + ", cusName=" + cusName + ", cusSex=" + cusSex + ", cusPhone=" + cusPhone
 				+ ", cusDate=" + cusDate + ", cusArea=" + cusArea + ", cusUserId=" + cusUserId + ", cusGuwen=" + cusGuwen + ", cusStat=" + cusStat
-				+ ", cusTjTime=" + cusTjTime + ", cusUser=" + cusUser + ", UserJigou=" + cusUserJigou + "]";
+				+ ", cusTjTime=" + cusTjTime + ", cusUser=" + cusUser + ", UserJigou=" + cusUserJigou + ", UserTjname=" + cusUserTjname + "]";
 	}
 
 

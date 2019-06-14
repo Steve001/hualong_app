@@ -43,6 +43,7 @@
 					
 					
 					<th>推介人机构</th>
+					<th>中介app推荐人</th>
 					
 					<th>指定置业顾问</th> 
 					<th>客户状态</th>
@@ -62,6 +63,7 @@
 						
 
 						<td>${customer.cusUserJigou }</td>
+						<td>${customer.cusUserTjname }</td>
 					
 						<td>${customer.cusGuwen }</td> 
 						<td>${customer.cusStat }</td>
