@@ -46,7 +46,7 @@ public class CusDao {
 	/* 用户 列表 */
 	public List<Customer> getCustomers(Connection connection, PageBean pageBean, Customer customer) throws SQLException {
 		List<Customer> customers=new ArrayList<Customer>();
-		StringBuffer sb =new StringBuffer( "select t1.*,t2.user_name from customer t1,user t2 where t2.user_id=t1.cus_userId order by cus_tjtime desc ");
+		StringBuffer sb =new StringBuffer( "select t1.*,t2.user_name,t2.user_jigou from customer t1,user t2 where t2.user_id=t1.cus_userId order by cus_tjtime desc ");
 		if(StringUtil.isNotEmpty(customer.getCusName())) {
 			sb.append(" and cus_name= '"+customer.getCusName()+"'");
 		}
@@ -55,7 +55,23 @@ public class CusDao {
 		}
 		PreparedStatement pstmt = connection.prepareStatement(sb.toString());
 		ResultSet rs = pstmt.executeQuery();
-		while (rs.next()) {     
+		while (rs.next()) {   
+			Customer customer1 = new Customer();
+			customer1.setCusId(rs.getInt("cus_id"));   					//从数据库中查询信息，需要匹配数据库中相关字段
+			customer1.setCusName(rs.getString("cus_name"));
+			customer1.setCusSex(rs.getString("cus_sex"));
+			customer1.setCusPhone(rs.getString("cus_phone"));
+			customer1.setCusArea(rs.getInt("cus_area"));
+			customer1.setCusDate(rs.getString("cus_date"));
+			customer1.setCusUserId(rs.getInt("cus_userId"));
+			customer1.setCusGuwen(rs.getString("cus_guwen")); 
+			customer1.setCusStat(rs.getString("cus_stat"));
+			customer1.setCusTjTime(rs.getString("cus_tjtime"));
+			customer1.setCusUser(rs.getString("user_name"));
+			customer1.setCusUserJigou(rs.getString("user_jigou")); //获取中介机构
+			customers.add(customer1);
+			
+			/*
 			Customer customer1 = new Customer();
 			customer1.setCusId(rs.getInt(1));   					//从数据库中查询信息，需要匹配数据库中相关字段
 			customer1.setCusName(rs.getString(2));
@@ -67,8 +83,10 @@ public class CusDao {
 			customer1.setCusGuwen(rs.getString(8)); 
 			customer1.setCusStat(rs.getString(9));
 			customer1.setCusTjTime(rs.getString(10));
-			customer1.setCusUser(rs.getString(11));						
+			customer1.setCusUser(rs.getString(11));
+			customer1.setCusUserJigou(rs.getString(12)); //获取中介机构
 			customers.add(customer1);
+			*/
 		}
 		return customers;
 	}
@@ -86,12 +104,25 @@ public class CusDao {
 
 	/* 展示客户信息 */
 	public static Customer customerShow(Connection con, String cusId) throws SQLException {
-		String sql = "select t1.*,t2.user_name from customer t1,user t2 where t1.cus_id=? and t2.user_id=t1.cus_userId ";
+		String sql = "select t1.*,t2.user_name,t2.user_jigou from customer t1,user t2 where t1.cus_id=? and t2.user_id=t1.cus_userId ";
 		PreparedStatement pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, cusId);
 		ResultSet rs = pstmt.executeQuery();
 		Customer customer1 = new Customer();
 		while (rs.next()) {
+			customer1.setCusId(rs.getInt("cus_id"));
+			customer1.setCusName(rs.getString("cus_name"));
+			customer1.setCusSex(rs.getString("cus_sex"));
+			customer1.setCusPhone(rs.getString("cus_phone"));
+			customer1.setCusArea(rs.getInt("cus_area"));
+			customer1.setCusDate(rs.getString("cus_date"));
+			customer1.setCusUserId(rs.getInt("cus_userId"));
+			customer1.setCusGuwen(rs.getString("cus_guwen"));
+			customer1.setCusStat(rs.getString("cus_stat"));
+			customer1.setCusTjTime(rs.getString("cus_tjtime"));
+			customer1.setCusUser(rs.getString("user_name"));
+			customer1.setCusUserJigou(rs.getString("user_jigou"));
+			/*
 			customer1.setCusId(rs.getInt(1));
 			customer1.setCusName(rs.getString(2));
 			customer1.setCusSex(rs.getString(3));
@@ -103,6 +134,10 @@ public class CusDao {
 			customer1.setCusStat(rs.getString(9));
 			customer1.setCusTjTime(rs.getString(10));
 			customer1.setCusUser(rs.getString(11));
+			customer1.setCusUserJigou(rs.getString(12));
+			*/
+			
+			
 			
 			/*
 			customer1.setCusStat(rs.getString(8));

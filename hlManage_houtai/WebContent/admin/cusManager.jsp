@@ -41,9 +41,9 @@
 					<th>面积</th>
 					<th>推介人姓名</th>
 					
-					<!--  
+					
 					<th>推介人机构</th>
-					-->
+					
 					<th>指定置业顾问</th> 
 					<th>客户状态</th>
 					<th>推介时间</th>
@@ -60,9 +60,9 @@
 						<td>${customer.cusArea }</td>
 						<td>${customer.cusUser }</td>
 						
-						<!--  
-						<td>${user.userJigou }</td>
-						-->
+
+						<td>${customer.cusUserJigou }</td>
+					
 						<td>${customer.cusGuwen }</td> 
 						<td>${customer.cusStat }</td>
 						<td>${customer.cusTjTime }</td>
@@ -70,6 +70,15 @@
 							<button class="btn btn-mini btn-danger" type="button" onclick="userDelete(${customer.cusId})">删除</button></td>
 					</tr>
 				</c:forEach>
+				
+				<!--  
+				<c:forEach  varStatus="i" var="customer" items="${userList }">
+					<tr>
+						<td>${user.userJigou }</td>
+					</tr>
+				</c:forEach>
+				-->
+				
 			</table>
 		</div>
 		<div align="center"><font color="red">${error }</font></div>
