@@ -102,12 +102,17 @@ public class Customer {
 	public void setCusGuwen(String cusGuwen) {
 		this.cusGuwen = cusGuwen;
 	}
+	
+	//@Override
+	//public String toString() {
+	//	return "Customer [cusId=" + cusId + ", cusName=" + cusName + ", cusSex=" + cusSex + ", cusPhone=" + cusPhone
+	//			+ ", cusDate=" + cusDate + ", cusArea=" + cusArea + ", cusUserId=" + cusUserId + ", cusGuwen=" + cusGuwen + ", cusStat=" + cusStat
+	//			+ ", cusBz=" + cusBz + "]";
+	//}
 
 	@Override
 	public String toString() {
-		return "Customer [cusId=" + cusId + ", cusName=" + cusName + ", cusSex=" + cusSex + ", cusPhone=" + cusPhone
-				+ ", cusDate=" + cusDate + ", cusArea=" + cusArea + ", cusUserId=" + cusUserId + ", cusGuwen=" + cusGuwen + ", cusStat=" + cusStat
-				+ ", cusBz=" + cusBz + "]";
+		return "Customer [cusId=" + cusId +", cusName=" + cusName +", cusSex=" + cusSex + ", cusPhone=" + cusPhone + ", cusArea=" + cusArea + 
+				", cusDate=" + cusDate + ", cusUserId=" + cusUserId + ", cusGuwen=" + cusGuwen +", cusStat=" + cusStat + ", cusTjtime=" + cusTjtime + "]";
 	}
-
 }

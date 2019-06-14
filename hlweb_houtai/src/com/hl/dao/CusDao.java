@@ -64,8 +64,8 @@ public class CusDao {
 			customer.setCusPhone(executeQuery.getString(4));
 			customer.setCusArea(executeQuery.getString(5));
 			customer.setCusDate(executeQuery.getString(6));
-			customer.setCusStat(executeQuery.getString(8));
-			customer.setCusGuwen(executeQuery.getString(9));
+			customer.setCusGuwen(executeQuery.getString(8));
+			customer.setCusStat(executeQuery.getString(9));
 			customer.setCusTjtime(format.format(new Date(executeQuery.getTimestamp(10).getTime())));
 			customers.add(customer);
 		}

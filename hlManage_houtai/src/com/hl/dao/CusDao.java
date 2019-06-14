@@ -12,6 +12,8 @@ import com.hl.model.PageBean;
 import com.hl.util.DateUtil;
 import com.hl.util.StringUtil;
 
+import sun.security.timestamp.TSRequest;
+
 public class CusDao {
 
 	DateUtil dateUtil = new DateUtil();
@@ -97,10 +99,17 @@ public class CusDao {
 			customer1.setCusArea(rs.getInt(5));
 			customer1.setCusDate(rs.getString(6));
 			customer1.setCusUserId(rs.getInt(7));
+			customer1.setCusGuwen(rs.getString(8));
+			customer1.setCusStat(rs.getString(9));
+			customer1.setCusTjTime(rs.getString(10));
+			customer1.setCusUser(rs.getString(11));
+			
+			/*
 			customer1.setCusStat(rs.getString(8));
 			customer1.setCusTjTime(rs.getString(9));
 			customer1.setCusUser(rs.getString(10));
 			customer1.setCusGuwen(rs.getString(11));	      //获取置业顾问
+			*/
 		}
 		return customer1;
 	}

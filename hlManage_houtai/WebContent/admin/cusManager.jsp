@@ -40,6 +40,10 @@
 					<th>预计到访时间</th>
 					<th>面积</th>
 					<th>推介人姓名</th>
+					
+					<!--  
+					<th>推介人机构</th>
+					-->
 					<th>指定置业顾问</th> 
 					<th>客户状态</th>
 					<th>推介时间</th>
@@ -55,6 +59,10 @@
 						<td>${customer.cusDate }</td>
 						<td>${customer.cusArea }</td>
 						<td>${customer.cusUser }</td>
+						
+						<!--  
+						<td>${user.userJigou }</td>
+						-->
 						<td>${customer.cusGuwen }</td> 
 						<td>${customer.cusStat }</td>
 						<td>${customer.cusTjTime }</td>
