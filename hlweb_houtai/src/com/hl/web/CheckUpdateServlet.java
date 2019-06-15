@@ -44,7 +44,7 @@ public class CheckUpdateServlet extends HttpServlet {
 		if ("Android".equals(platform)) {
 			// 1.获取最新安卓版本信息
 			String new_version = PropertiesUtil.getValue("app.version", "/common.properties");
-			if (StringUtil.isEmpty(version) || version.compareTo(new_version) > 0) {
+			if (StringUtil.isEmpty(version) || version.compareTo(new_version) < 0) {
 				// 需要更新
 				appinfo.setVersion(new_version);
 				appinfo.setApk(PropertiesUtil.getValue("app.apk", "/common.properties"));
