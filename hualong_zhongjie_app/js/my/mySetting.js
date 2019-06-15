@@ -8,6 +8,10 @@ mui.plusReady(function() {
 	//判断是否登录
 	if(storageUser.IsLogin) {
 
+		document.getElementById("aboutApp").addEventListener("tap",function(){
+			openNew("aboutApp.html");
+		})
+
 		document.getElementById("loginOut").addEventListener("tap", function() {
 			var btnArray = ['否', '是'];
 			mui.confirm('退出后您将不能查看个人数据，确定退出？', '', btnArray, function(e) {
