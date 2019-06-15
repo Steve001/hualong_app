@@ -6,9 +6,9 @@ import java.util.Properties;
 
 public class PropertiesUtil {
 	
-	public static String getValue(String key) {
+	public static String getValue(String key,String fileName) {
 		Properties  prop = new Properties();
-		InputStream in = new PropertiesUtil().getClass().getResourceAsStream("/hl.properties");
+		InputStream in = new PropertiesUtil().getClass().getResourceAsStream(fileName);
 		try {
 			prop.load(in);
 		} catch (IOException e) {

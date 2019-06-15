@@ -4,19 +4,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DbUtil {
-	
+
 	public Connection getCon() throws Exception {
-		Class.forName(PropertiesUtil.getValue("jdbcName"));
-		Connection con = DriverManager.getConnection(PropertiesUtil.getValue("dbUrl"), PropertiesUtil.getValue("dbUserName"), PropertiesUtil.getValue("dbPassword"));
+		Class.forName(PropertiesUtil.getValue("jdbcName", "/hl.properties"));
+		Connection con = DriverManager.getConnection(PropertiesUtil.getValue("dbUrl", "/hl.properties"),
+				PropertiesUtil.getValue("dbUserName", "/hl.properties"),
+				PropertiesUtil.getValue("dbPassword", "/hl.properties"));
 		return con;
 	}
-	
+
 	public void closeCon(Connection con) throws Exception {
-		if(con!=null) {
+		if (con != null) {
 			con.close();
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		DbUtil dbUtil = new DbUtil();
 		try {

@@ -76,7 +76,6 @@ public class addCusServlet extends HttpServlet {
 						httpModel.setMessage("推介失败");
 					}
 				}
-				System.out.println(JSONObject.toJSON(httpModel));
 				response.getWriter().println(JSONObject.toJSON(httpModel));
 			} catch (Exception e) {
 				e.printStackTrace();

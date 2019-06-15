@@ -36,4 +36,13 @@
 		<servlet-name>getCusServlet</servlet-name>
 		<url-pattern>/getCus</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>checkUpdateServlet</servlet-name>
+		<servlet-class>com.hl.web.CheckUpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>checkUpdateServlet</servlet-name>
+		<url-pattern>/checkVersion</url-pattern>
+	</servlet-mapping>
 </web-app>

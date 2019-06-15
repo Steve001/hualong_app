@@ -58,6 +58,7 @@ public class userLoginServlet extends HttpServlet {
 			}
 			response.getWriter().println(JSONObject.toJSON(httpModel));
 		} catch (Exception e) {
+			httpModel.setStatus(HttpModel.ERROR);
 			e.printStackTrace();
 		}finally {
 			try {
