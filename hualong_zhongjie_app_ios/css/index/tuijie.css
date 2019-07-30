@@ -1,0 +1,22 @@
+@charset "utf-8";
+/*重新设置字体*/
+body{font-family:Helvetica Neue,Roboto,microsoft yahei,Arial !important;}
+input,textarea,select{ font-family:Helvetica Neue,Roboto,microsoft yahei,Arial !important;}
+/*重置header样式*/
+.mui-newBar{background-color: #00C3F2;box-shadow: none;}
+.mui-newBar .mui-btn-link{color:#fff;}
+.mui-newBar .mui-title{color:#fff; font-size: 18px;left: 60px;right: 60px;}
+.mui-newBar .mui-pull-right{line-height: 44px;color:#fff;}
+/*重置表单样式*/
+.mui-input-group:before{background: none;}
+.mui-input-group:after{background: none;}
+.mui-input-group .mui-input-row{height: auto;}
+.mui-input-row label{line-height: 46px;padding: 0;text-align: left;width: 30%;padding-left: 10px;color:#1E1E1E;font-size: 15px !important;}
+.mui-input-group .mui-input-row:after{background-color: #eee;}
+.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{width: 70%;min-height: 46px;text-align: right; font-size: 15px;border-radius: 0;}
+.mui-input-row .mui-input-clear~.mui-icon-clear, .mui-input-row .mui-input-password~.mui-icon-eye, .mui-input-row .mui-input-speech~.mui-icon-speech{left:35%;top: 50%;width: 20px;height: 20px;margin-top:-10px;}
+.mui-input-row select{font-size: 14px;width: auto !important;padding-right: 10px;}
+.mui-input-row select option{text-align: right;}
+.mui-input-row textarea{padding: 10px;height: 62px;}
+.mui-input-row input[readonly],.mui-input-row input[disabled]{color:#666;background-color:rgb(240,240,240);background: -webkit-linear-gradient(left, #fff, rgb(240,240,240)) !important; }
+.mui-input-row input:focus,.mui-input-row textarea:focus{background-color:rgb(245,253,254);background: -webkit-linear-gradient(left, #fff, rgb(245,253,254));}

@@ -211,6 +211,7 @@ public class userManagerServlet extends HttpServlet{
 		request.getRequestDispatcher("mainAdmin.jsp").forward(request, response);
 	}
 
+	 
 	private String genPagation(int totalNum, int currentPage, int pageSize){
 		int totalPage = totalNum%pageSize==0?totalNum/pageSize:totalNum/pageSize+1;
 		StringBuffer pageCode = new StringBuffer();

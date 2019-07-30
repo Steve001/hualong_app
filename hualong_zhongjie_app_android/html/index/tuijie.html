@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script type="text/javascript">
+			document.write('<script src="../../js/fix.js?rd=?rd=' + Math.random() + '"><\/script>');
+		</script>
+		<script type="text/javascript">
+			link(['../../css/index/tuijie.css']);
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我要推介</h1>
+		</header>
+
+		<div class="mui-content">
+			<div class="mui-input-group">
+				<div class="mui-input-row">
+					<label>客户姓名</label>
+					<input type="text" id="tui_name" name="cusName" class="mui-input-clear" placeholder="被推介人姓名">
+				</div>
+				<div class="mui-input-row">
+					<label>客户性别</label>
+					<select name="cusSex" id="tui_sex">
+						<option value="男">男</option>
+						<option value="女">女</option>
+					</select>
+				</div>
+				<div class="mui-input-row">
+					<label>联系电话</label>
+					<input type="number" id="tui_phone" name="cusPhone" class="mui-input-clear" placeholder="被推介人手机号码">
+				</div>
+				<div class="mui-input-row">
+					<label>意向面积</label>
+					<select name="cusArea" id="tui_mj">
+						<option value="110-120">110-120平米</option>
+						<option value="121-130">121-130平米</option>
+						<option value="131-140">131-140平米</option>
+						<option value="141-150">141-150平米</option>
+						<option value="151-160">151-160平米</option>
+						<option value="161以上">161以上平米</option>
+					</select>
+				</div>
+				
+				<div class="mui-input-row">
+					<label>置业顾问指定</label>
+					<select name="cusGuwen" id="tui_guwen">
+						<option value="默认">默认</option>
+						<option value="路蕊">路蕊</option>
+						<option value="蔺芳">蔺芳</option>
+						<option value="黄云贞">黄云贞</option>
+						<option value="刘蒙">刘蒙</option>
+						<option value="薛康">薛康</option>
+						<option value="李蓝蓝">李蓝蓝</option>
+						<option value="闫娇楠">闫娇楠</option>
+						<option value="张晨雪">张晨雪</option>
+						<option value="张习霞">张习霞</option>
+					</select>
+				</div>
+				
+				
+				<div class="mui-input-row">
+					<label>预计到访</label>
+					<input type="date" id="tui_time" name="cusDate" class="mui-input-clear" placeholder="预计到访时间(*月*号*点)">
+				</div>
+				<div class="mui-button-row">
+					<button type="submit" id="verify" class="mui-btn mui-btn-primary">确定</button>
+				</div>
+
+				<div>
+				</div>
+
+	</body>
+	<script type="text/javascript">
+		script(['../../js/mui.min.js', '../../js/lib/md5.min.js', '../../js/lib/common.js', '../../js/index/tuijie.js'], true);
+	</script>
+
+</html>

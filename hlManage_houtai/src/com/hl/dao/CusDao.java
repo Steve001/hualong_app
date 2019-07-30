@@ -111,7 +111,7 @@ public class CusDao {
 			customer1.setCusUserTjname(rs.getString("user_tjname"));
 		
 			
-		}
+		} 
 		return customer1;
 	}
 

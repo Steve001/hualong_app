@@ -21,6 +21,8 @@ public class HttpModel {
 	private int code;
 	private String message;
 	private Exception error;
+	private String version;
+	
 	// 业务数据
 	private List<Object> appdata = new ArrayList<Object>();
 
@@ -85,6 +87,14 @@ public class HttpModel {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+	
+	public String getVersion() {
+		return version;
+	}
+	
+	public void setVersion(String version) {
+		this.version = version;
 	}
 
 }
