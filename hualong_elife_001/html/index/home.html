@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script type="text/javascript">
+			document.write('<script src="../../js/fix.js?rd=?rd=' + Math.random() + '"><\/script>');
+		</script>
+		<script type="text/javascript">
+			link(['../../css/swiper-3.4.2.min.css', '../../css/index/home.css', '../../css/news/newsList.css', '../../fonts/mui.ttf']);
+		</script>
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">华龙e生活</h1>
+			<a class="mui-icon mui-pull-right mui-icon-email" data-loginevent="pkEvent.goToolControl()" data-loginbackid="tool/toolControl.html"></a>
+		</header>
+		<div class="mui-content mui-scroll-wrapper" id="pullrefresh">
+			<!-- <div class="mui-text-center">
+				<p>华龙e生活
+				</p>
+			</div> -->	
+			<div class="mui-scroll">
+				<div class="swiper-container">
+					<div class="swiper-wrapper" id="banner_warp">
+						<div class="swiper-slide"><img src="../../images/banner1.png" /></div>
+						<div class="swiper-slide"><img src="../../images/banner2.png" /></div>
+						<div class="swiper-slide"><img src="../../images/banner3.png" /></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				
+				
+				
+				<!-- 修改了图标图片，点击链接及id暂未定义 -->
+				<div class="mui-row mui-text-center navig">
+					<div class="mui-col-sm-2 mui-col-xs-2" id="newslist">
+						<img src="../../images/door.png" />
+						<p>手机开门</p>
+					</div>
+					<div class="mui-col-sm-2 mui-col-xs-2" data-href="nearShop.html">
+						<img src="../../images/bill.png" />
+						<p>房屋账单</p>
+					</div>
+					<div class="mui-col-sm-2 mui-col-xs-2 ckecklogin" data-loginevent="pkEvent.gonearPeople()" data-loginbackid="index/nearPeople.html">
+						<img src="../../images/guest_invite.png" />
+						<p>访客邀请</p>
+					</div>
+					<div class="mui-col-sm-2 mui-col-xs-2" data-href="richScan.html">
+						<img src="../../images/hammer.png" />
+						<p>报修</p>
+					</div>
+					<div class="mui-col-sm-2 mui-col-xs-2" data-href="richScan.html">
+						<img src="../../images/water.png" />
+						<p>送水</p>
+					</div>
+					<div class="mui-col-sm-2 mui-col-xs-2" data-href="richScan.html">
+						<img src="../../images/view_more.png" />
+						<p>查看更多</p>
+					</div>
+				</div>
+				<!--<div class="gameList" id="siglematch_warp">
+					<div class="nodata"></div>
+					<img class="matchLogo" src="http://kid-test.oss-cn-shanghai.aliyuncs.com/Brand/20170817172122475roihf.jpg" />
+					<div class="matchDetails">
+						<h4 class="mui-text-center">一起来战吧!!!</h4>
+						<p class="mui-text-center"><b id="timer_h">11</b>:<b id="timer_m">01</b>:<b id="timer_s">00</b></p>
+						<img class="matchBtn" src="../../images/matchBtn.png" />
+						<div class="mui-text-center">距离你100m</div>
+					</div>
+				</div>-->
+				
+				
+				<div class="competition">
+					<div class="mui-text-center">
+						<div class="head">
+							<i class="iconfont icon-competition"></i> 物业公告
+						</div>
+						<ul class="mui-table-view mui-text-left" id="newmatch_warp" style="min-height: 80px;">
+							<div class="nodata"></div>
+							<li class="mui-table-view-cell mui-media matchList">
+								<a href="javascript:;">
+									<div class="mui-media-body">
+										<p>通知公告测试：1235654321354635469872132135413132163546546132131654635135165465</>
+									
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="competition">
+					<h5 class="mui-text-center">
+						<div class="head">
+							<i class="iconfont icon-praise"></i>
+							社区活动
+							<!-- <button class="btn_change" id="changestore">换一组</button> -->
+						</div>
+						<div class="mui-row mui-text-left recommend" id="nearstore_warp" style="overflow: hidden;">
+							<div class="nodata"></div>
+						
+							</div>
+							<!-- <div class="mui-col-sm-6 mui-col-xs-6 storeinfo" data-id="{{item.StoreId}}">
+								<p class="star mui-pull-left">
+									<span class="scorewarp1">
+										<i style="width: calc(4.6 * 13px);"></i> 
+									</span> 2.6<br />
+									<span class="storeName">小红文具店</span>
+								</p>
+								<img class="mui-pull-left loadthumb storeImg" data-url="{{item.ImgUrl}}" data-wh=",200"/>
+							</div>
+							<div class="mui-col-sm-6 mui-col-xs-6 storeinfo" data-id="{{item.StoreId}}">
+								<p class="star mui-pull-left">
+									<span class="scorewarp1">
+										<i style="width: calc(4.6 * 13px);"></i> 
+									</span> 4.7<br />
+									<span class="storeName">晨光文具店</span>
+								</p>
+								<img class="mui-pull-left loadthumb storeImg" data-url="{{item.ImgUrl}}" data-wh=",200"/>
+							</div>
+							<div class="mui-col-sm-6 mui-col-xs-6 storeinfo" data-id="{{item.StoreId}}">
+								<p class="star mui-pull-left">
+									<span class="scorewarp1">
+										<i style="width: calc(4.6 * 13px);"></i> 
+									</span> 3.6<br />
+									<span class="storeName">青青草原</span>
+								</p>
+								<img class="mui-pull-left loadthumb storeImg" data-url="{{item.ImgUrl}}" data-wh=",200"/>
+							</div>
+							<div class="mui-col-sm-6 mui-col-xs-6 storeinfo" data-id="{{item.StoreId}}">
+								<p class="star mui-pull-left">
+									<span class="scorewarp1">
+										<i style="width: calc(4.6 * 13px);"></i> 
+									</span> 4.6<br />
+									<span class="storeName">啦啦啦</span>
+								</p>
+								<img class="mui-pull-left loadthumb storeImg" data-url="{{item.ImgUrl}}" data-wh=",200"/>
+							</div> -->
+						</div>
+					</h5>
+				</div>
+				<div class="competition">
+					<!-- <img src="../../images/strongCard.png" /> -->
+					<div class="mui-row mui-text-left recommend cardList" id="cardgroup_warp" style="padding: 0 6px;">
+						<div class="nodata"></div>
+					</div>
+				</div>
+				<div class="newslistwarp">
+					<div class="head">
+						<hr />
+						<span>最新资讯</span>
+						<div style="height: 8px;"></div>
+					</div>
+					<ul class="newslist" id="news_warp">
+						<div class="nodata"></div>
+					</ul>
+				</div>
+				<p class="mui-text-center cor-999">~到底了~</p>
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			//必须顺序加载
+			script(['../../js/lib/swiper-3.4.1.min.js', '../../js/index/home.js']);
+		</script>
+	</body>
+
+</html>
