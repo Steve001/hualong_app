@@ -36,7 +36,8 @@ mui.plusReady(function() {
 					//					appPage.loginBack(backid, backurl);
 					openNew("../main.html");
 				} else {
-					appUI.showTopTip(json.message);
+					plus.nativeUI.toast(json.message,{ duration:'long', type:'div' });				//联动后端代码实现可变信息的toast窗口
+					// appUI.showTopTip(json.message);
 				}
 			}, true, function() {
 				appUI.removeDisabled(btn_login);

@@ -50,7 +50,9 @@ public class userLoginServlet extends HttpServlet {
 			con=dbUtil.getCon();
 			currUser=userDao.userLogin(con, user);
 			if(currUser==null) {
-				httpModel.setMessage("用户名或密码错误");
+//				httpModel.setMessage("用户名或密码错误");
+				httpModel.setMessage("请输入正确的账号密码，若输入无误请联系18568223601进行人工审核");
+//				httpModel.setMessage("请输入正确的账号密码，如若输入无误请联系工作人员查看账号是否审核通过");
 				httpModel.setStatus(HttpModel.ERROR);
 			}else {
 				httpModel.addData(currUser);

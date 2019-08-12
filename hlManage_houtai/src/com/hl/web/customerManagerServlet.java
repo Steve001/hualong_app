@@ -32,7 +32,7 @@ public class customerManagerServlet extends HttpServlet{
 		this.doPost(request, response);
 	}
 
-	@Override
+	@Override 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
@@ -67,6 +67,14 @@ public class customerManagerServlet extends HttpServlet{
 				 if ("cusName".equals(searchType)) {
 					 customer.setCusName(s_customerManagerText);
 				}
+				 else if ("cusPhone".equals(searchType)) {						//根据客户手机号进行查找
+//					 customerPhoneFind(request,response);
+					 customer.setCusPhone(s_customerManagerText);
+				}
+				 else if ("cusGuwen".equals(searchType)) {						//根据客户指定置业顾问进行查找
+//					 customerPhoneFind(request,response);
+					 customer.setCusGuwen(s_customerManagerText);
+				}
 				session.setAttribute("searchType", searchType);
 				session.setAttribute("s_customerManagerText", s_customerManagerText);
 			} else {
@@ -78,6 +86,14 @@ public class customerManagerServlet extends HttpServlet{
 				if("cusName".equals(searchType)) {
 					customer.setCusName(s_customerManagerText);
 				}
+				else if("cusPhone".equals(searchType)) {
+//					customerPhoneFind(request,response);
+					customer.setCusPhone(s_customerManagerText);
+				}
+				else if("cusGuwen".equals(searchType)) {
+//					customerPhoneFind(request,response);
+					customer.setCusGuwen(s_customerManagerText);
+				}
 				session.setAttribute("searchType", searchType);
 				session.setAttribute("s_customerManagerText", s_customerManagerText);
 			}
@@ -87,6 +103,12 @@ public class customerManagerServlet extends HttpServlet{
 				if(o1!=null) {
 					if("cusName".equals((String)o2)) {
 						customer.setCusName((String)o1);
+					}
+					else if("cusPhone".equals((String)o2)) {
+						customer.setCusPhone((String)o1);
+					}
+					else if("cusGuwen".equals((String)o2)) {
+						customer.setCusGuwen((String)o1);
 					}
 				}
 			}
@@ -119,6 +141,26 @@ public class customerManagerServlet extends HttpServlet{
 		}
 	}
 
+	
+//	private void customerPhoneFind(HttpServletRequest request,
+//			HttpServletResponse response) {
+//		String cusPhone = request.getParameter("cusPhone");
+//		Connection con = null;
+//		try {
+//			con = dbUtil.getCon();
+//			CusDao.getCustomerByPhone(con, cusPhone);
+//			//request.getRequestDispatcher("cusList?action=list").forward(request, response);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			try {
+//				dbUtil.closeCon(con);
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
+	
 	private void customerDelete(HttpServletRequest request,
 			HttpServletResponse response) {
 		String userId = request.getParameter("cusId");

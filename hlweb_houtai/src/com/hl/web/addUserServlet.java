@@ -57,20 +57,31 @@ public class addUserServlet extends HttpServlet {
 				con = dbUtil.getCon();
 				// 1.判断该用户是否被推介过
 				int existCus = userDao.isExistUser(con, user);
-				if (existCus == 1) {
+				int existCus_reg = userDao.isExistUser_reg(con, user);
+				if (existCus == 1 || existCus_reg ==1) {
 					// 用户被推过
 					httpModel.setStatus(HttpModel.ERROR);
 					httpModel.setMessage("该用户已存在");
-				} else {
-					int saveNum = userDao.addUser(con, user);
-					if (saveNum > 0) {
-						httpModel.setMessage("注册成功");
-						httpModel.setStatus(HttpModel.SUCCESS);
-					} else {
-						httpModel.setMessage("注册失败，请联系系统管理员");
-						httpModel.setStatus(HttpModel.ERROR);
-					}
+				} 
+				else {
+					System.out.println("------------------");
+					userDao.addUserReg(con, user);
+					httpModel.setMessage("注册完成，请等候审核结果");
+					httpModel.setStatus(HttpModel.SUCCESS);
 				}
+				
+				
+				//取消注册端口功能
+//				else {
+//					int saveNum = userDao.addUser(con, user);
+//					if (saveNum > 0) {
+//						httpModel.setMessage("注册成功");
+//						httpModel.setStatus(HttpModel.SUCCESS);
+//					} else {
+//						httpModel.setMessage("注册失败，请联系系统管理员");
+//						httpModel.setStatus(HttpModel.ERROR);
+//					}
+//				}
 				response.getWriter().println(JSONObject.toJSON(httpModel));
 			} catch (Exception e) {
 				e.printStackTrace();

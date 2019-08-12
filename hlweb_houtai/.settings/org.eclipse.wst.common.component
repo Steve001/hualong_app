@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="hlweb">
+    <wb-module deploy-name="hlweb_houtai">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="hlweb"/>
-        <property name="java-output-path" value="/hlweb/build/classes"/>
+        <property name="context-root" value="hlweb_houtai"/>
+        <property name="java-output-path" value="/hlweb_houtai/build/classes"/>
     </wb-module>
 </project-modules>

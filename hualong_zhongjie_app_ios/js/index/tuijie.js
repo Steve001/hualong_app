@@ -32,7 +32,7 @@ mui.plusReady(function() {
 			"cusDate": tui_time.value,
 			"cusUserid": storageUser.userId,
 			
-			"cusGuwen": tui_guwen.value,
+			// "cusGuwen": tui_guwen.value, 		取消置顶置业顾问端口
 			
 			//"cusGuwen": tui_guwen.options[tui_guwen.getSelectedIndex].value
 			//			"cusBz":tui_bz.value
@@ -47,10 +47,12 @@ mui.plusReady(function() {
 		} else if(data.cusDate.trim() == "") {
 			//appUI.showTopTip("请输入联系电话");
 			mui.toast("请选择预计到访时间");
-		} else if(data.cusGuwen.trim() == "") {
-			//appUI.showTopTip("请输入联系电话");
-			mui.toast("请选择你指定的置业顾问");
-		} else {
+		} 
+		// else if(data.cusGuwen.trim() == "") {
+		// 	//appUI.showTopTip("请输入联系电话");
+		// 	mui.toast("请选择你指定的置业顾问");
+		// } 
+		else {
 			appUI.setDisabled(btn_submit);
 			request("/addCus", data, function(json) {
 				appUI.removeDisabled(btn_submit);

@@ -86,8 +86,10 @@
 			<div class="span2 bs-docs-sidebar" >
 				<ul class="nav nav-list bs-docs-sidenav">
 					<li><a href="blank"><i class="icon-chevron-right"></i>首页</a></li>
+					<!-- <li><a href="dormManager?action=list"><i class="icon-chevron-right"></i>管理员管理</a></li -->
 					<li><a href="userList?action=list"><i class="icon-chevron-right"></i>中介管理</a></li>
 					<li><a href="cusList?action=list"><i class="icon-chevron-right"></i>推介客户管理</a></li>
+					<!-- <li><a href="password?action=preChange"><i class="icon-chevron-right"></i>修改密码</a></li> -->
 					<li><a href="login.jsp"><i class="icon-chevron-right"></i>退出系统</a></li>
 				</ul>
 			</div>

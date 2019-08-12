@@ -86,13 +86,15 @@ mui.plusReady(function() {
 				appUI.removeDisabled(btn_login);
 				if(json.status == "success") {
 					var data = json.appdata[0];
-					log(data);
+					//plus.nativeUI.toast(data,{ duration:'long', type:'div' });
+					log(data);						
 					storageUser.login(data);
 					storageUser.log();
 					//					appPage.loginBack(backid, backurl);
 					openNew("../main.html");
 				} else {
-					appUI.showTopTip(json.message);
+					plus.nativeUI.toast(json.message,{ duration:'long', type:'div' });
+					//appUI.showTopTip(json.message);
 				}
 			}, true, function() {
 				appUI.removeDisabled(btn_login);

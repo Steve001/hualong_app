@@ -22,7 +22,7 @@
 		<div class="data_list_title">
 		<c:choose>
 			<c:when test="${user.userId!=null }">
-				添加中介信息
+				修改中介信息
 			</c:when>
 			<c:otherwise>
 				添加中介信息
@@ -47,6 +47,10 @@
 							<td><input type="text" id="userPhone"  name="userPhone" value="${user.userPhone }"  style="margin-top:5px;height:30px;" /></td>
 						</tr>
 						<tr>
+							<td><font color="red">*</font>app推荐人：</td>
+							<td><input type="text" id="userTjname"  name="userTjname" value="${user.userTjname }"  style="margin-top:5px;height:30px;" /></td>
+						</tr>
+						<tr>
 							<td><font color="red">*</font>密码：</td>
 							<td><input type="password" id="userPassword"  name="userPassword" value="${user.userPassword }"  style="margin-top:5px;height:30px;" /></td>
 						</tr>
@@ -63,5 +67,3 @@
 			</div>
 		</form>
 </div>
-
-

@@ -12,7 +12,7 @@ import com.hl.model.PageBean;
 import com.hl.util.DateUtil;
 import com.hl.util.StringUtil;
 
-import sun.security.timestamp.TSRequest;
+//import sun.security.timestamp.TSRequest;
 
 public class CusDao {
 
@@ -42,18 +42,62 @@ public class CusDao {
 		pstmt.setString(1, cusId);
 		return pstmt.executeUpdate();
 	}
+	
+	
+//	/* 根据手机号查找客户 */
+//	public static List<Customer> getCustomerByPhone(Connection connection, String cusPhone) throws SQLException {
+//		List<Customer> customers=new ArrayList<Customer>();
+//		
+//		//StringBuffer sb1 =new StringBuffer( "select t1.*,t2.user_name,t2.user_jigou,t2.user_tjname from customer t1,user t2 where t2.user_id=t1.cus_userId order by t1.cus_tjtime desc ");
+//		StringBuffer sb2 =new StringBuffer( "select * from customer where cus_phone = ?  ");
+//		System.out.println(sb2);
+//		PreparedStatement pstmt = connection.prepareStatement(sb2.toString());
+//		ResultSet rs = pstmt.executeQuery();
+//		while (rs.next()) {   
+//			Customer customer1 = new Customer();
+//			customer1.setCusId(rs.getInt("cus_id"));   					//从数据库中查询信息，需要匹配数据库中相关字段
+//			customer1.setCusName(rs.getString("cus_name"));
+//			customer1.setCusSex(rs.getString("cus_sex"));
+//			customer1.setCusPhone(rs.getString("cus_phone"));
+//			customer1.setCusArea(rs.getInt("cus_area"));
+//			customer1.setCusDate(rs.getString("cus_date"));
+//			customer1.setCusUserId(rs.getInt("cus_userId"));
+//			customer1.setCusGuwen(rs.getString("cus_guwen")); 
+//			customer1.setCusStat(rs.getString("cus_stat"));
+//			customer1.setCusTjTime(rs.getString("cus_tjtime"));
+//			customer1.setCusUser(rs.getString("user_name"));
+//			customer1.setCusUserJigou(rs.getString("user_jigou")); //获取中介机构
+//			customer1.setCusUserTjname(rs.getString("user_tjname"));
+//			customers.add(customer1);
+//			
+//			
+//		}
+//		System.out.println(customers);
+//		return customers;
+//	}
 
 	/* 用户 列表 */
 	public List<Customer> getCustomers(Connection connection, PageBean pageBean, Customer customer) throws SQLException {
 		List<Customer> customers=new ArrayList<Customer>();
-		StringBuffer sb =new StringBuffer( "select t1.*,t2.user_name,t2.user_jigou,t2.user_tjname from customer t1,user t2 where t2.user_id=t1.cus_userId order by cus_tjtime desc ");
+		
+		//StringBuffer sb1 =new StringBuffer( "select t1.*,t2.user_name,t2.user_jigou,t2.user_tjname from customer t1,user t2 where t2.user_id=t1.cus_userId order by t1.cus_tjtime desc ");
+		StringBuffer sb2 =new StringBuffer( "select t1.*,t2.user_name,t2.user_jigou,t2.user_tjname from customer t1,user t2 where t2.user_id=t1.cus_userId  ");
 		if(StringUtil.isNotEmpty(customer.getCusName())) {
-			sb.append(" and cus_name= '"+customer.getCusName()+"'");
+			sb2.append(" and cus_name= '"+customer.getCusName()+"' order by t1.cus_tjtime desc");
+			System.out.println(sb2.toString());
+		}
+		if(StringUtil.isNotEmpty(customer.getCusPhone())) {
+			sb2.append(" and cus_phone= '"+customer.getCusPhone()+"' order by t1.cus_tjtime desc");
+			System.out.println(sb2.toString());
+		}
+		if(StringUtil.isNotEmpty(customer.getCusGuwen())) {
+			sb2.append(" and cus_guwen= '"+customer.getCusGuwen()+"' order by t1.cus_tjtime desc");
+			System.out.println(sb2.toString());
 		}
 		if(pageBean != null) {
-			sb.append(" limit "+pageBean.getStart()+","+pageBean.getPageSize());
+			sb2.append(" limit "+pageBean.getStart()+","+pageBean.getPageSize());
 		}
-		PreparedStatement pstmt = connection.prepareStatement(sb.toString());
+		PreparedStatement pstmt = connection.prepareStatement(sb2.toString());
 		ResultSet rs = pstmt.executeQuery();
 		while (rs.next()) {   
 			Customer customer1 = new Customer();
@@ -111,7 +155,7 @@ public class CusDao {
 			customer1.setCusUserTjname(rs.getString("user_tjname"));
 		
 			
-		} 
+		}
 		return customer1;
 	}
 

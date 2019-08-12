@@ -3,8 +3,8 @@
     "id" : "H58A6D608", /*应用的标识，创建应用时自动生成，勿手动修改*/
     "name" : "华龙e房通", /*应用名称，程序桌面图标名称*/
     "version" : {
-        "name" : "1.0.2", /*应用版本名称*/
-        "code" : 2
+        "name" : "1.0.4", /*应用版本名称*/
+        "code" : 800
     },
     "description" : "", /*应用描述信息*/
     "icons" : {
@@ -80,12 +80,6 @@
         "Barcode" : {
             "description" : "管理二维码扫描插件"
         },
-        "Maps" : {
-            "description" : "管理地图插件"
-        },
-        "Speech" : {
-            "description" : "管理语音识别插件"
-        },
         "Webview" : {
             "description" : "窗口管理"
         },
@@ -97,8 +91,7 @@
         },
         "NativeObj" : {
             "description" : "原生对象"
-        },
-        "OAuth" : {}
+        }
     },
     "plus" : {
         "splashscreen" : {
@@ -111,25 +104,9 @@
         "distribute" : {
             "plugins" : {
                 "statics" : {},
-                "oauth" : {
-                    "weixin" : {
-                        "appid" : "wx031012661a49d8b0",
-                        "appsecret" : "d842785ef922aaa52ea8bcbdd116c486"
-                    },
-                    "qq" : {
-                        "appid" : "1106365558"
-                    }
-                },
-                "maps" : {
-                    "amap" : {
-                        "appkey_ios" : "6d5a7a16c2b33a6aa281376dbc14dd3e",
-                        "appkey_android" : "685e6c62f79f3a0fdf550299c8477d26",
-                        "description" : ""
-                    }
-                },
-                "speech" : {
-                    "ifly" : {}
-                }
+                "oauth" : {},
+                "maps" : {},
+                "speech" : {}
             },
             "apple" : {
                 "appid" : "", /*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
@@ -145,30 +122,23 @@
                 "password" : "", /*Android应用打包使用密钥库中证书的密码*/
                 "aliasname" : "", /*Android应用打包使用密钥库中证书的别名*/
                 "permissions" : [
-                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
                     "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
-                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
-                    "<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>",
                     "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
                     "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
                     "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
-                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
                     "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
                     "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
-                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
-                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
-                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
-                    "<uses-feature android:name=\"android.hardware.camera\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
-                    "<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>",
-                    "<uses-permission android:name=\"android.permission.CAMERA\"/>"
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
                 ]
             },
             "orientation" : [ "portrait-primary", "portrait-secondary" ], /*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
@@ -176,29 +146,39 @@
                 "ios" : {
                     "prerendered" : true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
                     "auto" : "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
-                    "iphone" : {},
+                    "iphone" : {
+                        "app@2x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_120*120.png",
+                        "app@3x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_180*180.png",
+                        "spotlight@2x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_80*80.png",
+                        "spotlight@3x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_120*120.png",
+                        "settings@2x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_58*58.png",
+                        "settings@3x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_87*87.png",
+                        "notification@2x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_40*40.png",
+                        "notification@3x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_60*60.png"
+                    },
                     "ipad" : {},
-                    "appstore" : ""
+                    "appstore" : "/Users/steve/Documents/华龙/华龙APP/app_logo_ios.png"
                 },
                 "android" : {
                     "mdpi" : "C:/Users/Administrator/Desktop/hllogo.png",
                     "ldpi" : "C:/Users/Administrator/Desktop/hllogo.png",
-                    "hdpi" : "C:/Users/Administrator/Desktop/hllogo.png",
-                    "xhdpi" : "C:/Users/Administrator/Desktop/hllogo.png",
-                    "xxhdpi" : "C:/Users/Administrator/Desktop/hllogo.png",
-                    "xxxhdpi" : "C:/Users/Administrator/Desktop/hllogo.png"
+                    "hdpi" : "/Users/steve/Documents/华龙/华龙APP/app_logo_ios.png",
+                    "xhdpi" : "/Users/steve/Documents/华龙/华龙APP/app_logo_ios.png",
+                    "xxhdpi" : "/Users/steve/Documents/华龙/华龙APP/app_logo_ios.png",
+                    "xxxhdpi" : "/Users/steve/Documents/华龙/华龙APP/app_logo_ios.png"
                 }
             },
             "splashscreen" : {
                 "ios" : {
                     "iphone" : {
                         "default" : "",
-                        "portrait-896h@3x" : "",
-                        "portrait-896h@2x" : "",
-                        "iphonex" : "",
-                        "retina55" : "",
-                        "retina47" : "",
-                        "retina40" : ""
+                        "portrait-896h@3x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_1242*2688.png",
+                        "portrait-896h@2x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_828*1792.png",
+                        "iphonex" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_1125*2436.png",
+                        "retina55" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_1242*2208.png",
+                        "retina47" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_750*1334.png",
+                        "retina40" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_640*1136.png",
+                        "retina35" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_640*960.png"
                     },
                     "ipad" : {
                         /*iPad竖屏启动图片，分辨率：768x1004*//*iPad高分屏竖屏图片，分辨率：1536x2008*/
@@ -213,9 +193,9 @@
                 "android" : {
                     "mdpi" : "", /*普通屏启动图片，分辨率：240x282*/
                     "ldpi" : "",
-                    "hdpi" : "/images/jiemian.png",
-                    "xhdpi" : "/images/jiemian.png",
-                    "xxhdpi" : "/images/jiemian.png"
+                    "hdpi" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/android_480*762.png",
+                    "xhdpi" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/android_720*1242.png",
+                    "xxhdpi" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/android_1080*1882.png"
                 }
             }
         }

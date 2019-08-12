@@ -3,8 +3,8 @@
     "id" : "H58A6D608", /*应用的标识，创建应用时自动生成，勿手动修改*/
     "name" : "华龙e房通", /*应用名称，程序桌面图标名称*/
     "version" : {
-        "name" : "1.0.3", /*应用版本名称*/
-        "code" : 707
+        "name" : "1.0.4", /*应用版本名称*/
+        "code" : 807
     },
     "description" : "", /*应用描述信息*/
     "icons" : {
@@ -150,17 +150,17 @@
                     "prerendered" : true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
                     "auto" : "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
                     "iphone" : {
-                        "app@2x" : "/Users/steve/Desktop/app_logo_ios120.png",
-                        "app@3x" : "/Users/steve/Desktop/app_logo_ios180.png",
-                        "spotlight@2x" : "/Users/steve/Desktop/app_logo_ios80.png",
-                        "spotlight@3x" : "/Users/steve/Desktop/app_logo_ios120.png",
-                        "settings@2x" : "/Users/steve/Desktop/app_logo_ios58.png",
-                        "settings@3x" : "/Users/steve/Desktop/app_logo_ios87.png",
-                        "notification@2x" : "/Users/steve/Desktop/app_logo_ios40.png",
-                        "notification@3x" : "/Users/steve/Desktop/app_logo_ios60.png"
+                        "app@2x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_120*120.png",
+                        "app@3x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_180*180.png",
+                        "spotlight@2x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_80*80.png",
+                        "spotlight@3x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_120*120.png",
+                        "settings@2x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_58*58.png",
+                        "settings@3x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_87*87.png",
+                        "notification@2x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_40*40.png",
+                        "notification@3x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/logo图标/logo_60*60.png"
                     },
                     "ipad" : {},
-                    "appstore" : "/Users/steve/Documents/app_logo_ios.png"
+                    "appstore" : "/Users/steve/Documents/华龙/华龙APP/app_logo_ios.png"
                 },
                 "android" : {
                     "mdpi" : "C:/6.png",
@@ -175,13 +175,13 @@
                 "ios" : {
                     "iphone" : {
                         "default" : "",
-                        "portrait-896h@3x" : "/Users/steve/Desktop/审核图片/iphone/启动图/iphone1242*2688.png",
-                        "portrait-896h@2x" : "/Users/steve/Desktop/审核图片/iphone/启动图/iphone828*1792.png",
-                        "iphonex" : "/Users/steve/Desktop/审核图片/iphone/启动图/iphone1125*2436.png",
-                        "retina55" : "/Users/steve/Desktop/审核图片/iphone/启动图/iphone1242*2208.png",
-                        "retina47" : "/Users/steve/Desktop/审核图片/iphone/启动图/iphone750*1334.png",
-                        "retina40" : "/Users/steve/Desktop/审核图片/iphone/启动图/iphone640*1136.png",
-                        "retina35" : "/Users/steve/Desktop/审核图片/iphone/启动图/iphone640*960.png"
+                        "portrait-896h@3x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_1242*2688.png",
+                        "portrait-896h@2x" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_828*1792.png",
+                        "iphonex" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_1125*2436.png",
+                        "retina55" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_1242*2208.png",
+                        "retina47" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_750*1334.png",
+                        "retina40" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_640*1136.png",
+                        "retina35" : "/Users/steve/Documents/华龙/华龙APP/app图标等/启动图/ios_640*960.png"
                     },
                     "ipad" : {
                         /*iPad竖屏启动图片，分辨率：768x1004*//*iPad高分屏竖屏图片，分辨率：1536x2008*/
@@ -191,11 +191,11 @@
                         /*iPad iOS7竖屏启动图片，分辨率：768x1024*//*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
                         "landscape7" : "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
                         "landscape-retina7" : "",
-                        "portrait-1366h@2x" : "/Users/steve/Desktop/审核图片/ipad/启动图/ipad2018*2732.png",
-                        "portrait-1194h@2" : "/Users/steve/Desktop/审核图片/ipad/启动图/ipad1668*2388.png",
-                        "portrait-1112h@2x" : "/Users/steve/Desktop/审核图片/ipad/启动图/ipad1668*2224.png",
-                        "portrait-retina7" : "/Users/steve/Desktop/审核图片/ipad/启动图/ipad1536*2048.png",
-                        "portrait7" : "/Users/steve/Desktop/审核图片/ipad/启动图/ipad768*1024.png"
+                        "portrait-1366h@2x" : "",
+                        "portrait-1194h@2" : "",
+                        "portrait-1112h@2x" : "",
+                        "portrait-retina7" : "",
+                        "portrait7" : ""
                     }
                 },
                 "android" : {

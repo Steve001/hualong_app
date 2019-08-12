@@ -65,23 +65,25 @@ public class User {
 	
 
 	
-	public User(int userId, String userName, String userPhone, String userPassword, String userJigou) {
+	public User(int userId, String userName, String userPhone, String userPassword, String userJigou, String userTjname) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
 		this.userPhone = userPhone;
 		this.userPassword = userPassword;
 		this.userJigou = userJigou;
+		this.userTjname = userTjname;
 	}
 
 	
 	
-	public User(String userName, String userPhone, String userPassword, String userJigou) {
+	public User(String userName, String userPhone, String userPassword, String userJigou, String userTjname) {
 		super();
 		this.userName = userName;
 		this.userPhone = userPhone;
 		this.userPassword = userPassword;
 		this.userJigou = userJigou;
+		this.userTjname = userTjname;
 	}
 
 	public User() {

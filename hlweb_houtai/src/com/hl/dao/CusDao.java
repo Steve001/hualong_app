@@ -27,23 +27,38 @@ public class CusDao {
 		pstmt.setString(4, customer.getCusArea());
 		pstmt.setString(5, customer.getCusDate());
 		pstmt.setInt(6, customer.getCusUserId());
-		pstmt.setString(7, customer.getCusGuwen());   //获取置业顾问信息
-		pstmt.setString(8, "已推介");
-		pstmt.setTimestamp(9, new Timestamp(new Date().getTime()));
+		pstmt.setString(7, "null");
+//		pstmt.setString(7, customer.getCusGuwen());   
+		pstmt.setString(8, "等候审核");								//设置客户默认状态为等候审核
+		pstmt.setTimestamp(9, new Timestamp(new Date().getTime()));		//获取推介时间戳
 		return pstmt.executeUpdate();
 	}
 
 	public int isExistCus(Connection connection, Customer customer) throws SQLException {	//根据手机号判断客户是否被推介
-		String sql = "select count(*) from customer where cus_phone = ?";
-		//String sql = "select count(*) from customer where cus_name = ? and cus_phone = ?";
-		PreparedStatement pstmt = connection.prepareStatement(sql);
-		//pstmt.setString(1, customer.getCusName());
-		pstmt.setString(1, customer.getCusPhone());
-		ResultSet executeQuery = pstmt.executeQuery();
-		while (executeQuery.next()) {
-			if (executeQuery.getInt(1) > 0) {
+		String sql1 = "select count(*) from customer where cus_phone = ?";
+		String sql2 = "select count(*) from customer where cus_phone = ? and cus_stat != '等候审核'";
+//		String sql2 = "select cus_stat from customer where cus_phone = ?";
+		PreparedStatement pstmt1 = connection.prepareStatement(sql1);
+		PreparedStatement pstmt2 = connection.prepareStatement(sql2);
+		pstmt1.setString(1, customer.getCusPhone());
+		pstmt2.setString(1, customer.getCusPhone());
+		ResultSet executeQuery1 = pstmt1.executeQuery();
+		ResultSet executeQuery2 = pstmt2.executeQuery();
+		System.out.println("判断是否被推介...............");
+		System.out.println("客户状态");
+		//String str = executeQuery2.getString(1);
+		//System.out.println(str);
+		while (executeQuery1.next() && executeQuery2.next()) {
+//		while (executeQuery2.next()) {	
+//			String str = executeQuery2.getString(1);
+//			System.out.println(str);
+//			if (executeQuery1.getInt(1) > 0 ) {	
+			if(executeQuery2.getInt(1)>0) {
+//			if (str.equals("等候审核")) {
+				System.out.println("审核返回不可被推介");
 				return 1;
 			} else {
+				System.out.println("审核返回可推介");
 				return 0;
 			}
 		}

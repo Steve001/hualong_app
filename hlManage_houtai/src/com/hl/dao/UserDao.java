@@ -21,6 +21,9 @@ public class UserDao {
 		if(StringUtil.isNotEmpty(user.getUserName())) {
 			sb.append(" and user_name= '"+user.getUserName()+"'");
 		}
+		if(StringUtil.isNotEmpty(user.getUserPhone())) {
+			sb.append(" and user_phone= '"+user.getUserPhone()+"'");
+		}
 		if(pageBean != null) {
 			sb.append(" limit "+pageBean.getStart()+","+pageBean.getPageSize());
 		}
@@ -79,14 +82,23 @@ public class UserDao {
 	}
 	
 	public int userUpdate(Connection con, User user) throws SQLException {
-		String sql="update user set user_name=?,user_phone=?,user_password=?,user_jigou=?  where user_id=?";
+		String sql="update user set user_name=?,user_phone=?,user_password=?,user_jigou=?,user_tjname=? where user_id=?";
 		PreparedStatement pstm=con.prepareStatement(sql);
+		
+		pstm.setString(1, user.getUserName());
+		pstm.setString(2, user.getUserPhone());
+		pstm.setString(3, user.getUserPassword());
+		pstm.setString(4, user.getUserJigou());
+		pstm.setString(5, user.getUserTjname());
+		pstm.setInt(6, user.getUserId());
+		/*
 		pstm.setString(1, user.getUserName());
 		pstm.setString(2, user.getUserPhone());
 		pstm.setString(3, user.getUserPassword());
 		pstm.setString(4, user.getUserJigou());
 		pstm.setInt(5, user.getUserId());
 		pstm.setString(6, user.getUserTjname());
+		*/
 		return pstm.executeUpdate();
 	}
 	

@@ -23,6 +23,7 @@
 					<select id="searchType" name="searchType" style="width: 80px;">
 					<!-- <option value="name">姓名</option> -->
 					<option value="userName" ${searchType eq "userName"?'selected':'' }>中介名</option>
+					<option value="userPhone" ${searchType eq "userPhone"?'selected':'' }>中介手机号</option>
 					</select>
 					&nbsp;<input id="s_userManagerText" name="s_userManagerText" type="text"  style="width:120px;height: 30px;" class="input-medium search-query" value="${s_userManagerText }">
 					&nbsp;<button type="submit" class="btn btn-info" onkeydown="if(event.keyCode==13) myForm.submit()">搜索</button>

@@ -45,7 +45,7 @@ public class addCusServlet extends HttpServlet {
 		String cusArea = request.getParameter("cusArea");
 		String cusDate = request.getParameter("cusDate");
 		String cusUserid = request.getParameter("cusUserid");
-		String cusGuwen = request.getParameter("cusGuwen");
+//		String cusGuwen = request.getParameter("cusGuwen");					取消指定置业顾问功能
 		if (cusName == null || cusSex == null || cusPhone == null || cusArea == null || cusDate == null) {
 			httpModel.setStatus(HttpModel.ERROR);
 			httpModel.setMessage("数据不完整");
@@ -54,7 +54,7 @@ public class addCusServlet extends HttpServlet {
 			customer.setCusName(cusName);
 			customer.setCusSex(cusSex);
 			customer.setCusPhone(cusPhone);
-			customer.setCusGuwen(cusGuwen);
+//			customer.setCusGuwen(cusGuwen);
 			customer.setCusArea(cusArea);
 			customer.setCusDate(cusDate);
 			customer.setCusUserId(Integer.parseInt(cusUserid));
@@ -65,7 +65,7 @@ public class addCusServlet extends HttpServlet {
 				if (existCus == 1) {
 					// 用户被推过
 					httpModel.setStatus(HttpModel.ERROR);
-					httpModel.setMessage("该用户已被推介，审核失败");
+					httpModel.setMessage("该用户已被推介，推介失败");
 				} else {
 					int addCus = cusDao.addCus(con, customer);
 					if (addCus > 0) {

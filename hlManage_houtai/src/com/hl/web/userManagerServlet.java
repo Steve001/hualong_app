@@ -66,6 +66,9 @@ public class userManagerServlet extends HttpServlet{
 				 if ("userName".equals(searchType)) {
 					user.setUserName(s_userManagerText);
 				}
+				 else if ("userPhone".equals(searchType)) {
+						user.setUserPhone(s_userManagerText);
+					}
 				session.setAttribute("searchType", searchType);
 				session.setAttribute("s_userManagerText", s_userManagerText);
 			} else {
@@ -76,6 +79,9 @@ public class userManagerServlet extends HttpServlet{
 			if(StringUtil.isNotEmpty(s_userManagerText)) {
 				if("userName".equals(searchType)) {
 					user.setUserName(s_userManagerText);
+				}
+				else if("userPhone".equals(searchType)) {
+					user.setUserPhone(s_userManagerText);
 				}
 				session.setAttribute("searchType", searchType);
 				session.setAttribute("s_userManagerText", s_userManagerText);
@@ -142,8 +148,9 @@ public class userManagerServlet extends HttpServlet{
 		String userPassword = request.getParameter("userPassword");
 		String userPhone = request.getParameter("userPhone");
 		String userJigou = request.getParameter("userJigou");
-//		String userId = request.getParameter("userId");
-		User user=new User(userName, userPhone, userPassword, userJigou);
+		String userTjname = request.getParameter("userTjname");
+		String userId = request.getParameter("userId");
+		User user=new User(userName, userPhone, userPassword, userJigou, userTjname);
 		Connection con = null;
 		try {
 			con = dbUtil.getCon();
@@ -211,7 +218,6 @@ public class userManagerServlet extends HttpServlet{
 		request.getRequestDispatcher("mainAdmin.jsp").forward(request, response);
 	}
 
-	 
 	private String genPagation(int totalNum, int currentPage, int pageSize){
 		int totalPage = totalNum%pageSize==0?totalNum/pageSize:totalNum/pageSize+1;
 		StringBuffer pageCode = new StringBuffer();
